@@ -1,14 +1,15 @@
 <?php
-
 session_start();
 
-    $host = "localhost";
+    $dbhost = "localhost";
     $db = "LaSalle";
+    $dbuser = "usuario";
+    $dbpassword = "contraseña";
 
     $conn = mysqli_connect(
         $host,
-        'usuario',
-        'contraseña',
+        $dbuser,
+        $dbpassword,
         $db
     );
 ?>
