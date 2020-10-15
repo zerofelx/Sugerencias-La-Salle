@@ -1,25 +1,29 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card card-body">
-                <form action="database/save_suggestion.php" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="suggestion_title" id="suggestion_title"
-                        class="form-control" placeholder="Título de la sugerencia" autofocus>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="suggestion" rows="5" id="suggestion" class="form-control" 
-                        placeholder="Escríbenos tu sugerencia"></textarea>
-                    </div>
+<?php
+    $SID = $suggestions['ID'];
 
-                    <div class="form-group text-center">
-                        <input type="submit" class="btn btn-success" name="save_suggestion">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-md-6">
-        
-        </div>
+    $id = $suggestions['userid'];
+    $query3 = "SELECT * FROM usuarios WHERE ID=$id";
+    $UResponse = mysqli_query($conn, $query3);
+    $users = mysqli_fetch_array($UResponse);
+
+    $LikesQuery = "SELECT * FROM likes WHERE suggestionid='$SID' AND opinion='1'";
+    $LikesResponse = mysqli_query($conn, $LikesQuery);
+    $likes = mysqli_fetch_array($LikesResponse);
+
+    $DislikesQuery = "SELECT * FROM likes WHERE suggestionid='$SID' AND opinion='0'";
+    $DislikesResponse = mysqli_query($conn, $DislikesQuery);
+?>
+
+<div class="row mt-4 card card-body">
+    <small>Autor: <?=$users['username'];?></small>
+    <div class="text-center">
+        <h4><?=$suggestions['titulo']?></h4>
+        <p><?=$suggestions['descripcion']?></p>
+    </div>
+    <div class="text-right">
+        <a class="btn btn-secondary" href="database/like.php?action=like&sid=<?=$SID?>&module=<?=$_GET['module_id']?>">
+            <i class="far fa-thumbs-up"> <?=mysqli_num_rows($LikesResponse);?></i></a>
+        <a class="btn btn-secondary" href="database/like.php?action=dislike&sid=<?=$SID;?>&module=<?=$_GET['module_id']?>">
+            <i class="far fa-thumbs-down"> <?=mysqli_num_rows($DislikesResponse);?></i></a>
     </div>
 </div>
