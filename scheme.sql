@@ -19,3 +19,29 @@ INSERT INTO modulos (Modulo, Ciclo, Descripcion) VALUES
     ("M01", "ASIR", "Implantación de sistemas operativos"), 
     ("M09", "ASIR", "Implantación de aplicaciones web"), 
     ("M01", "DAM", "Programación de servicios y procesos");
+
+
+CREATE TABLE suggestions(
+    ID integer not null AUTO_INCREMENT,
+    userid integer not null,
+    moduloid integer not null,
+    titulo varchar(80) not null,
+    descripcion varchar(250) not null,
+    primary key(ID)
+);
+
+CREATE TABLE likes(
+    ID integer not null AUTO_INCREMENT,
+    userid integer not null,
+    suggestionid integer not null,
+    opinion boolean not null,
+    primary key(ID)
+);
+
+CREATE TABLE comments(
+    ID integer not null AUTO_INCREMENT,
+    userid integer not null,
+    suggestionid integer not null,
+    descripcion varchar(250) not null,
+    primary key(ID)
+);
