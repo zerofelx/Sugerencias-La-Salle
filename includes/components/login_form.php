@@ -1,5 +1,5 @@
 <div class="col-md-6">
-
+    <h1 class="text-center">Inicia Sesión</h1>
     <?php include ("status_message.php") ?>
 
     <div class="card card-body">
@@ -12,9 +12,9 @@
                 <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control">
             </div>
             <div class="form-group text-center">
-                <input type="submit" class="btn btn-success btn-block" name="create_user">
+                <input type="submit" class="btn btn-success btn-block" name="login">
             </div>
         </form>
-        <a href="login.php?form=register">Registrarse</a>
+        <a class="text-right" href="login.php?form=register">Registrarse</a>
     </div>
 </div>
