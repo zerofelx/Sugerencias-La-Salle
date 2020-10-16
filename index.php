@@ -3,8 +3,8 @@
     include ("./includes/header.php");
 ?>
 
-
 <div class="container text-center pt-5">
+<?php include ("./includes/components/status_message.php"); ?>
     <h1>SUGERENCIAS LA SALLE ONLINE</h1>
     <br>
     <div class="row justify-content-center">
@@ -19,7 +19,7 @@
                 </div>
                 <br>
                 <div class="form-group text-center">
-                    <input type="submit" class="btn btn-success btn-block">
+                    <input type="submit" class="btn btn-success btn-block" value="Filtrar">
                 </div>
             </form>
         </div>
