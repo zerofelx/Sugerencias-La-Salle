@@ -1,4 +1,5 @@
 <div class="col-md-6">
+    <h1 class="text-center">Regístrate</h1>
 
     <?php include ("status_message.php") ?>
 
@@ -14,18 +15,12 @@
             <div class="form-group">
                 <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirma la contraseña" class="form-control">
             </div>
-            <div class="from-group">
-                <select name="rol" id="rol" class="form-control">
-                    <option value="user">Usuario</option>
-                    <option value="admin">Administrador</option>
-                </select>
-            </div>
             <br>
             <div class="form-group text-center">
                 <input type="submit" class="btn btn-success btn-block" name="create_user">
             </div>
         </form>
-        <a href="login.php?form=login">Iniciar Sesión</a>
+        <a class="text-right" href="login.php?form=login">Iniciar Sesión</a>
     </div>
 </div>
 
