@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="form-group text-center">
-                    <input type="submit" class="btn btn-success" name="save_suggestion">
+                    <input type="submit" class="btn btn-success" name="save_suggestion" value="Dejar sugerencia">
                 </div>
             </form>
         </div>
