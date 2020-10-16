@@ -7,6 +7,10 @@ create table usuarios(
     primary key(ID)
 );
 
+-- Esta es la creación del usuario admin
+INSERT INTO usuarios (username, psw, rol, locked) VALUES ("andrea", "098f6bcd4621d373cade4e832627b4f6", "admin", 0)
+-- La contraseña "098f6bcd4621d373cade4e832627b4f6" es "test"
+
 create table modulos (
     ID integer not null AUTO_INCREMENT,
     Modulo varchar(4) not null,
