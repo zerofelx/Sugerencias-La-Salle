@@ -16,7 +16,7 @@
 ?>
 
 <div class="container p-4">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-self-center">
         <?php 
             switch ($View) {
                 case 'Login':
