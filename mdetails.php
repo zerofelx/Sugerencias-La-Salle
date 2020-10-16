@@ -26,7 +26,11 @@
             </div>
         </div>
         <div class="col-md-7">
-            <?php include ("./includes/components/suggestion_form.php") ?>
+            <?php 
+                if(isset($_SESSION['user_id'])) {
+                    include ("./includes/components/suggestion_form.php");
+                }
+            ?>
 
             <?php while ($suggestions = mysqli_fetch_array($SResponse)) {?>
                 <?php include ("./includes/components/suggestion.php") ?>
