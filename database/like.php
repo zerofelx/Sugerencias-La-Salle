@@ -1,9 +1,10 @@
 <?php 
 include ("db.php");
-    
+
+if(isset($_SESSION['user_id'])) {
     if(isset($_GET['action'])) {
         $module = $_GET['module'];
-        $userid = 1;
+        $userid = $_SESSION['user_id'];
         $action = $_GET['action'];
         $suggestionid = $_GET['sid'];
         
@@ -37,13 +38,11 @@ include ("db.php");
 
             header("Location: http://localhost/mdetails.php?module_id=$module");
         }
-
-        $_SESSION['message'] = 'Estado: "' . $action . '" creado';
-        $_SESSION['message_type'] = 'success';
-
         header("Location: http://localhost/mdetails.php?module_id=$module");
     };
-    
+} else {
+    header("Location: http://localhost/login.php");
+}
     
     function CheckLike($conn, $userid, $suggestionid) {
         $query = "SELECT opinion FROM likes WHERE userid='$userid' AND suggestionid='$suggestionid'";
