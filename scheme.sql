@@ -27,6 +27,7 @@ CREATE TABLE suggestions(
     moduloid integer not null,
     titulo varchar(80) not null,
     descripcion varchar(250) not null,
+    fecha timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key(ID)
 );
 
