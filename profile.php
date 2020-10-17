@@ -2,6 +2,7 @@
     include ("./database/db.php");
     include ("./includes/header.php");
 
+    # OBTENER SUGERENCIAS FILTRADO POR EL USERID
     $uid = $_SESSION['user_id'];
     $query2 = "SELECT * FROM suggestions WHERE userid='$uid'";
     $SResponse = mysqli_query($conn, $query2);

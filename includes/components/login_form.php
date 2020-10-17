@@ -12,7 +12,7 @@
                 <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control">
             </div>
             <div class="form-group text-center">
-                <input type="submit" class="btn btn-success btn-block" name="login">
+                <input value="Iniciar Sesión" type="submit" class="btn btn-success btn-block" name="login">
             </div>
         </form>
         <a class="text-right" href="login.php?form=register">Registrarse</a>

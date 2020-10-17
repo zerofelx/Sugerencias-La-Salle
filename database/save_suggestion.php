@@ -3,6 +3,7 @@ include ("db.php");
 $module = $_GET['modulo'];
 
 if(isset($_SESSION['user_id'])) {
+    # VERIFICAR QUE LOS CAMPOS DE TÍTULO Y DESCRIPCIÓN NO ESTÉN VACÍOS
     if(!empty($_POST['suggestion_title']) && !empty($_POST['suggestion'])) {
         if(isset($_POST['save_suggestion'])) {
             $userid = $_SESSION['user_id'];

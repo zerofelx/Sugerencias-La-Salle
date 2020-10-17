@@ -2,7 +2,9 @@
 include ("db.php");
 $module = $_GET['module'];
 
+# COMPROBAR SI EL ROL DEL USUARIO ES ADMINISTRADOR (Prueba anti glitches)
 if ($_SESSION['rol'] == "admin") {
+    # BORRAR SUGERENCIA
     if(isset($_GET['delete_suggestion'])) {
         $suggestionid = $_GET['delete_suggestion'];
         $query = "DELETE FROM suggestions WHERE ID='$suggestionid';";
@@ -20,6 +22,7 @@ if ($_SESSION['rol'] == "admin") {
         header("Location: http://localhost/mdetails.php?module_id=$module");
     }
 
+    # BORRAR COMENTARIO
     if(isset($_GET['delete_comment'])) {
         $commentid = $_GET['delete_comment'];
         $query = "DELETE FROM comments WHERE ID='$commentid'";
@@ -35,6 +38,7 @@ if ($_SESSION['rol'] == "admin") {
         header("Location: http://localhost/mdetails.php?module_id=$module");
     }
 
+    # BANEAR USUARIO
     if(isset($_GET['ban_user'])) {
         $userid = $_GET['ban_user'];
         
@@ -65,6 +69,7 @@ if ($_SESSION['rol'] == "admin") {
             header("Location: http://localhost/mdetails.php?module_id=$module");
         }
     }
+# EN CASO DE QUE OCURRA UN ERROR INESPERADO
 } else {
     $_SESSION['message'] = "No tienes los permisos para hacer esto!";
     $_SESSION['message_type'] = "danger";

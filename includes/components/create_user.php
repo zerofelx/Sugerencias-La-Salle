@@ -17,7 +17,7 @@
             </div>
             <br>
             <div class="form-group text-center">
-                <input type="submit" class="btn btn-success btn-block" name="create_user">
+                <input value="Registrarse" type="submit" class="btn btn-success btn-block" name="create_user">
             </div>
         </form>
         <a class="text-right" href="login.php?form=login">Iniciar Sesión</a>

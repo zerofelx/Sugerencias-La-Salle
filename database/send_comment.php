@@ -2,7 +2,9 @@
 include ("db.php");
 $moduleid = $_GET['module'];
 
+# VERIFICAR SI EL USUARIO ESTÁ LOGGEADO Y ESTÁ SU ID ALMACENADO EN $_SESSION
 if(isset($_SESSION['user_id'])) {
+    
     if(isset($_POST['send_comment'])) {
         if(!empty($_POST['comment'])) {
             $comment = $_POST['comment'];

@@ -1,13 +1,16 @@
 <?php 
 include ("db.php");
 
+# VERIFICAR SI EL USUARIO ESTÁ LOGGEADO Y ESTÁ SU ID ALMACENADO EN $_SESSION
 if(isset($_SESSION['user_id'])) {
+    
     if(isset($_GET['action'])) {
         $module = $_GET['module'];
         $userid = $_SESSION['user_id'];
         $action = $_GET['action'];
         $suggestionid = $_GET['sid'];
         
+        # VERIFICAR SI YA EXISTE UN LIKE O DISLIKE (Ver función)
         if (CheckLike($conn, $userid, $suggestionid)) {
             switch ($action) {
                 case 'like':
